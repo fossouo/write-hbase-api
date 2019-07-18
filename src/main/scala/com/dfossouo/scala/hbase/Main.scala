@@ -1,4 +1,4 @@
-package com.cberez.scala.hbase
+package com.dfossouo.scala.hbase
 
 import HBaseWriter._
 

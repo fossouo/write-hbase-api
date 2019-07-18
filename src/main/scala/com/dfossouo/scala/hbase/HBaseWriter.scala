@@ -1,4 +1,4 @@
-package com.cberez.scala.hbase
+package com.dfossouo.scala.hbase
 
 import java.util
 import collection.JavaConversions._
@@ -7,9 +7,7 @@ import org.apache.hadoop.hbase.HTableDescriptor
 import org.apache.hadoop.hbase.client._
 import org.apache.hadoop.hbase.util.Bytes
 
-/**
-  * Created by cesar on 27/05/2016.
-  */
+
 object HBaseWriter {
 
   def createTableOrOverwrite(admin: Admin, table: HTableDescriptor): Unit = {
