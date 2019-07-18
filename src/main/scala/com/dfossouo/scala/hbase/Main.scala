@@ -39,7 +39,7 @@ object Main {
     conf.addResource(new Path(cmd.getOptionValue("cs")))
     //conf.set("hbase.zookeeper.quorum", cmd.getOptionValue("zq"))
     //conf.set("hbase.zookeeper.property.clientPort", cmd.getOptionValue("zp", "2181"))
-    conf.set("hadoop.security.authentication", "kerberos")
+    //conf.set("hadoop.security.authentication", "kerberos")
 
     // Login to kerberos
     println("security: " + UserGroupInformation.isSecurityEnabled)
@@ -61,7 +61,7 @@ object Main {
 
       val newTable: TableName = TableName.valueOf("hbase_demo")
       val tDescriptor: HTableDescriptor = new HTableDescriptor(newTable)
-      tDescriptor.addFamily(new HColumnDescriptor("CF1").setCompressionType(Algorithm.SNAPPY))
+      tDescriptor.addFamily(new HColumnDescriptor("cf").setCompressionType(Algorithm.SNAPPY))
       createTableOrOverwrite(admin, tDescriptor)
 
       println("Table created")
@@ -70,8 +70,8 @@ object Main {
 
       println("Inserting lines in created table...")
 
-      insertLine(table, "1", "CF1", "name", "cesar")
-      insertLines(table, "2", "CF1", Map("name" -> "cesar", "age" -> "25"))
+      insertLine(table, "1", "cf", "name", "cesar")
+      insertLines(table, "2", "cf", Map("name" -> "cesar", "age" -> "25"))
 
       println("Rows inserted")
 
