@@ -59,7 +59,7 @@ object Main {
 
       println("Creating table...")
 
-      val newTable: TableName = TableName.valueOf("hbase_demo")
+      val newTable: TableName = TableName.valueOf(cmd.getOptionValue("t"))
       val tDescriptor: HTableDescriptor = new HTableDescriptor(newTable)
       tDescriptor.addFamily(new HColumnDescriptor("cf").setCompressionType(Algorithm.SNAPPY))
       createTableOrOverwrite(admin, tDescriptor)

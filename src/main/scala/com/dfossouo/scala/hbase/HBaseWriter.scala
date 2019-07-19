@@ -11,10 +11,10 @@ import org.apache.hadoop.hbase.util.Bytes
 object HBaseWriter {
 
   def createTableOrOverwrite(admin: Admin, table: HTableDescriptor): Unit = {
-    if (admin.tableExists(table.getTableName)) {
+/*    if (admin.tableExists(table.getTableName)) {
       admin.disableTable(table.getTableName)
       admin.deleteTable(table.getTableName)
-    }
+    } */
     admin.createTable(table)
   }
 
