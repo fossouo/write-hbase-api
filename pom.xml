@@ -7,7 +7,7 @@
 
   <properties>
     <scala.version>2.11.0</scala.version>
-    <hbase.version>2.0.2.3.1.0.6-1</hbase.version>
+    <hbase.version>1.0.0</hbase.version>
   </properties>
 
   <repositories>
