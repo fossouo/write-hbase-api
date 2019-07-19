@@ -12,11 +12,13 @@ object HBaseWriter {
 
   def createTableOrOverwrite(admin: Admin, table: HTableDescriptor): Unit = {
 
-    if (admin.isTableAvailable(table.getTableName)) {
+/*    if (admin.isTableAvailable(table.getTableName)) {
       admin.disableTable(table.getTableName)
       admin.deleteTable(table.getTableName)
-    }
+    } */
+
     admin.createTable(table)
+
   }
 
   /**
